@@ -5,9 +5,7 @@ import { PostController } from './post.controller';
 import { PostService } from './post.service';
 
 @Module({
-  imports: [
-    MongooseModule.forFeature([{ name: 'Message', schema: PostSchema }]),
-  ],
+  imports: [MongooseModule.forFeature([{ name: 'Post', schema: PostSchema }])],
   providers: [PostService],
   controllers: [PostController],
 })

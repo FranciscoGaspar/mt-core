@@ -1,17 +1,25 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import mongoose from 'mongoose';
+import { Comment } from 'src/comment/schema/comment.schema';
+import { User } from 'src/user/schema/user.schema';
 
-@Schema()
+@Schema({
+  timestamps: true,
+})
 export class Post {
   @Prop()
   message: string;
 
-  @Prop([String]) //TODO: Later change to relation
-  comments: string[];
-
   @Prop()
-  authorId: string;
+  likes: number;
 
   @Prop()
   publishDate: Date;
+
+  @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }] })
+  comments: Comment[];
+
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
+  author: User;
 }
 export const PostSchema = SchemaFactory.createForClass(Post);
