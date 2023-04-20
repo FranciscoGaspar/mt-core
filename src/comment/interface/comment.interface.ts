@@ -1,6 +1,6 @@
-export interface IMessage extends Document {
+export interface IComment extends Document {
   readonly message: string;
-  readonly comments: string[];
+  readonly post: string; //TODO: relations
   readonly authorId: string;
   readonly publishDate: Date;
 }
