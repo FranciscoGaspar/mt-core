@@ -1,12 +1,12 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 @Schema()
-export class Message {
+export class Comment {
   @Prop()
   message: string;
 
-  @Prop([String]) //TODO: Later change to relation
-  comments: string[];
+  @Prop()
+  post: string; //TODO: relationship
 
   @Prop()
   authorId: string;
@@ -14,4 +14,4 @@ export class Message {
   @Prop()
   publishDate: Date;
 }
-export const MessageSchema = SchemaFactory.createForClass(Message);
+export const CommentSchema = SchemaFactory.createForClass(Comment);
