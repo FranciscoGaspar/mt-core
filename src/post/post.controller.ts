@@ -6,25 +6,25 @@ import { CreatePostDto } from './dto/create-post.dto';
 @Controller('post')
 @ApiTags('Post')
 export class PostController {
-    constructor(private readonly postService: PostService) {}
+  constructor(private readonly postService: PostService) {}
 
-    @Get()
-    async findAll() {
-        return this.postService.findAll();
-    }
+  @Get()
+  async findAll() {
+    return this.postService.findAll();
+  }
 
-    @Get('/:id')
-    async findPostById(@Param('id') id: string) {
-        return this.postService.findPostById(id);
-    }
+  @Get('/:id')
+  async findPostById(@Param('id') id: string) {
+    return this.postService.findPostById(id);
+  }
 
-    @Post()
-    async createPost(@Body() createPostDto: CreatePostDto) {
-        return await this.postService.createPost(createPostDto);
-    }
+  @Post()
+  async createPost(@Body() createPostDto: CreatePostDto) {
+    return await this.postService.createPost(createPostDto);
+  }
 
-    @Delete('/:id')
-    async deletePost(@Param('id') id: string) {
-        return await this.postService.deletePost(id);
-    }
+  @Delete('/:id')
+  async deletePost(@Param('id') id: string) {
+    return await this.postService.deletePost(id);
+  }
 }
