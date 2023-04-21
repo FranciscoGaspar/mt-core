@@ -25,7 +25,11 @@ export class PostService {
 
         const author = await this.userFacade.findUser(authorId);
         const newPost = new this.postModel({ message, author });
-        
+
         return newPost.save();
+    }
+
+    async deletePost(id: string): Promise<IPost> {
+        return this.postModel.findByIdAndDelete(id);
     }
 }
