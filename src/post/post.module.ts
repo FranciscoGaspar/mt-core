@@ -7,9 +7,12 @@ import { UserModule } from 'src/user/user.module';
 import { PostFacade } from './post.facade';
 
 @Module({
-  imports: [MongooseModule.forFeature([{ name: 'Post', schema: PostSchema }]), UserModule],
+  imports: [
+    MongooseModule.forFeature([{ name: 'Post', schema: PostSchema }]),
+    UserModule,
+  ],
   providers: [PostService, PostFacade],
   controllers: [PostController],
-  exports: [PostFacade]
+  exports: [PostFacade],
 })
 export class PostModule {}

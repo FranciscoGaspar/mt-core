@@ -9,6 +9,6 @@ import { UserFacade } from './user.facade';
   imports: [MongooseModule.forFeature([{ name: 'User', schema: UserSchema }])],
   providers: [UserService, UserFacade],
   controllers: [UserController],
-  exports: [UserFacade]
+  exports: [UserFacade],
 })
 export class UserModule {}
