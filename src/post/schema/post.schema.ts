@@ -13,9 +13,6 @@ export class Post {
   @Prop()
   likes: number;
 
-  @Prop()
-  publishDate: Date;
-
   @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }] })
   comments: Comment[];
 
