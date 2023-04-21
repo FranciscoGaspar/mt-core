@@ -9,9 +9,6 @@ export class Comment {
   @Prop()
   message: string;
 
-  @Prop()
-  publishDate: Date;
-
   @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }] })
   post: Post;
 
