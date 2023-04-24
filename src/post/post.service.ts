@@ -3,7 +3,7 @@ import { IPost } from './interface/post.interface';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreatePostDto } from './dto/create-post.dto';
-import { UserFacade } from 'src/user/user.facade';
+import { UserFacade } from '@user/user.facade';
 
 @Injectable()
 export class PostService {

@@ -1,5 +1,5 @@
-import { Post } from 'src/post/schema/post.schema';
-import { User } from 'src/user/schema/user.schema';
+import { Post } from '@post/schema/post.schema';
+import { User } from '@user/schema/user.schema';
 
 export interface IComment extends Document {
   readonly message: string;
