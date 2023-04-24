@@ -9,7 +9,7 @@ export class Comment {
   @Prop()
   message: string;
 
-  @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }] })
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Post' })
   post: Post;
 
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
