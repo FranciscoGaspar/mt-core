@@ -3,8 +3,8 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { IComment } from './interface/comment.interface';
 import { CreateCommentDto } from './dto/create-comment.dto';
-import { PostFacade } from 'src/post/post.facade';
-import { UserFacade } from 'src/user/user.facade';
+import { PostFacade } from '@post/post.facade';
+import { UserFacade } from '@user/user.facade';
 
 @Injectable()
 export class CommentService {

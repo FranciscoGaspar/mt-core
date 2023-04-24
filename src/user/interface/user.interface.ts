@@ -1,5 +1,5 @@
+import { Post } from '@post/schema/post.schema';
 import Document from 'mongoose';
-import { Post } from 'src/post/schema/post.schema';
 
 export interface IUser extends Document {
   readonly name: string;
