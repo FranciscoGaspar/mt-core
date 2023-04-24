@@ -3,7 +3,6 @@ import { User } from 'src/user/schema/user.schema';
 
 export interface IComment extends Document {
   readonly message: string;
-  readonly publishDate: Date;
   readonly post: Post;
   readonly author: User;
 }
