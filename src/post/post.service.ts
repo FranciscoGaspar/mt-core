@@ -23,7 +23,7 @@ export class PostService {
   async createPost(createPostDto: CreatePostDto): Promise<IPost> {
     const { message, authorId } = createPostDto;
 
-    const author = await this.userFacade.findUser(authorId);
+    const author = await this.userFacade.findUserById(authorId);
     const newPost = new this.postModel({ message, author });
 
     return newPost.save();
