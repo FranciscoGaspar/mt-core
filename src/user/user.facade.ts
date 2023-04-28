@@ -5,7 +5,11 @@ import { UserService } from './user.service';
 export class UserFacade {
   constructor(private readonly userService: UserService) {}
 
-  findUser(id: string) {
+  findUserById(id: string) {
     return this.userService.findUserById(id);
+  }
+
+  findUser(query: object) {
+    return this.userService.findUser(query);
   }
 }

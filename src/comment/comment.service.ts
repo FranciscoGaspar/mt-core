@@ -25,7 +25,7 @@ export class CommentService {
   async createComment(createCommentDto: CreateCommentDto) {
     const { authorId, postId, message } = createCommentDto;
 
-    const author = await this.userFacade.findUser(authorId);
+    const author = await this.userFacade.findUserById(authorId);
     const post = await this.postFacade.findPost(postId);
 
     const comment = new this.commentModel({
